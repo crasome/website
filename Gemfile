@@ -27,10 +27,13 @@ group :development, :test do
 
   gem 'pry-rails'
   gem 'pry-nav'
+
+  gem 'factory_girl_rails'
 end
 
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'webmock'
   gem 'launchy'
+  gem 'email_spec', github: "bmabey/email-spec"
 end
