@@ -32,7 +32,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails', :require => false
+  gem 'turnip', github: "jnicklas/turnip"
+  gem 'capybara', github: "jnicklas/capybara"
   gem 'webmock'
   gem 'launchy'
   gem 'email_spec', github: "bmabey/email-spec"

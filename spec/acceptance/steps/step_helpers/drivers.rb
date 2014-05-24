@@ -1,4 +1,4 @@
-module DriversCucumberHelper
+module StepHelpers::Drivers
   def with_selenium
     current_driver = Capybara.current_driver
     Capybara.current_driver = :selenium

@@ -1,6 +1,8 @@
 require_relative "drivers"
 
-module DeleteRequestsCucumberHelper
+module StepHelpers::DeleteRequest
+  include StepHelpers::Drivers
+
   # Submit an HTTP delete request, using rack_test driver
   def http_delete(path)
     with_rack do

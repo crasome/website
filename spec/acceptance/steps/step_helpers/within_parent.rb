@@ -1,4 +1,4 @@
-module WithinCucumberHelper
+module StepHelpers::WithinParent
   def within_parent_of(*args, &block)
     scope = args.first.is_a?(Capybara::Node::Base) ? args.first
                                                    : find(*args)

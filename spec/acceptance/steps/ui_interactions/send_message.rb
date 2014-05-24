@@ -1,4 +1,4 @@
-module MessageCucumberHelper
+module UiInteractions::SendMessage
   def message
     OpenStruct.new({
       :link => "send_message",

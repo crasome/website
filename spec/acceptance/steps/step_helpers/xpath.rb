@@ -1,4 +1,4 @@
-module XpathCucumberHelper
+module StepHelpers::Xpath
   def xpath
     OpenStruct.new({
       :parent => ".//..",
