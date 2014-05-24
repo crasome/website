@@ -16,6 +16,14 @@ class ContactMailer < ActionMailer::Base
       to: 'hr@crasome.com'
   end
 
+  def hire_us_request(message, from:)
+    @content = message.content
+    @visitor = from
+
+    mail from: format_sender(from), subject: format_subject(message),
+      to: 'sales@crasome.com'
+  end
+
   private
   def format_sender(visitor)
     "\"#{visitor.name}\" <#{visitor.email}>"

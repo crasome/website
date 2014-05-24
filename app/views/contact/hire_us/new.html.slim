@@ -1,0 +1,12 @@
+= form_tag "/contact/hire_us", method: :post, id: :hire_us_form do
+  .row
+    = text_field_tag "visitor[name]", "", placeholder: "Your name"
+    = text_field_tag "visitor[email]", "", placeholder: "Your email"
+    = text_field_tag "visitor[company]", "", placeholder: "Company"
+  .row
+    = text_field_tag "message[title]", "", placeholder: "Subject"
+  .row
+    = text_area_tag "message[content]", "", placeholder: "Message"
+  .row
+    = submit_tag "Send"
+

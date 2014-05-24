@@ -26,5 +26,6 @@ end
 
 placeholder :contact do
   match(/join ?(us|request)?/) { UiInteractions::JoinUs }
+  match(/hire ?(us|request)?/) { UiInteractions::HireUs }
   match(/(send )?message/)     { UiInteractions::SendMessage }
 end
