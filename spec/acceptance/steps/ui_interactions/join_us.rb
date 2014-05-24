@@ -1,19 +1,19 @@
 require_relative "context_delegator"
 
 module UiInteractions
-  class SendMessage < ContextDelegator
+  class JoinUs < ContextDelegator
 
     def initialize(context)
       super(
         context,
-        link:         "send_message",
-        form_name:    "#message_form",
+        link:         "join_us",
+        form_name:    "#join_us_form",
         form_submit:  "Send"
       )
     end
 
-    def send_message(message, visitor)
-      visit new_contact_message_path
+    def send_join_request(message, visitor)
+      visit new_contact_join_us_path
       fill_and_submit_form message, visitor
     end
 

@@ -1,0 +1,11 @@
+= form_tag "/contact/join_us", method: :post, id: :join_us_form do
+  .row
+    = text_field_tag "visitor[name]", "", placeholder: "Your name"
+    = text_field_tag "visitor[email]", "", placeholder: "Your email"
+  .row
+    = text_field_tag "message[title]", "", placeholder: "Subject"
+  .row
+    = text_area_tag "message[content]", "", placeholder: "Message"
+  .row
+    = submit_tag "Send"
+

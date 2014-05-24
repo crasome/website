@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :contact do
     resource :message, only: [:new, :create]
+    resource :join_us, only: [:new, :create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

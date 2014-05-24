@@ -1,13 +1,19 @@
 class ContactMailer < ActionMailer::Base
-  # TODO: move to config
-  default to: 'info@crasome.com'
-
 
   def message_to_us(message, from:)
     @content = message.content
     @visitor_name = from.name
 
-    mail from: format_sender(from), subject: format_subject(message)
+    mail from: format_sender(from), subject: format_subject(message),
+      to: 'info@crasome.com'
+  end
+
+  def join_us_request(message, from:)
+    @content = message.content
+    @visitor_name = from.name
+
+    mail from: format_sender(from), subject: format_subject(message),
+      to: 'hr@crasome.com'
   end
 
   private
@@ -16,6 +22,6 @@ class ContactMailer < ActionMailer::Base
   end
 
   def format_subject(message)
-    "Message from crasome.com: #{message.title}"
+    "#{action_name.humanize} from crasome.com: #{message.title}"
   end
 end
