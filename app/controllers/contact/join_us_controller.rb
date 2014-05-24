@@ -18,6 +18,6 @@ class Contact::JoinUsController < ApplicationController
   end
 
   def visitor_params
-    params.require(:visitor).permit(:name, :email)
+    params.require(:visitor).permit(:name, :email, :occupation)
   end
 end

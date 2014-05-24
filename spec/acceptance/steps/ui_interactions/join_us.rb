@@ -23,6 +23,7 @@ module UiInteractions
       within form_name do
         fill_in "visitor_name", with: visitor.name
         fill_in "visitor_email", with: visitor.email
+        fill_in "visitor_occupation", with: visitor.occupation
 
         fill_in "message_title", with: message.title
         fill_in "message_content", with: message.content

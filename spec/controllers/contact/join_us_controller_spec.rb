@@ -14,8 +14,10 @@ describe Contact::JoinUsController, :type => :controller do
 
     email = open_last_email
 
-    expect(email.from).to include visitor.email
     expect(email.to).to include "hr@crasome.com"
+    expect(email.from).to include visitor.email
+
+    expect(email).to have_body_text visitor.occupation
 
     expect(email).to have_subject /#{message.title}/
     expect(email).to have_body_text message.content

@@ -2,7 +2,7 @@ class ContactMailer < ActionMailer::Base
 
   def message_to_us(message, from:)
     @content = message.content
-    @visitor_name = from.name
+    @visitor = from
 
     mail from: format_sender(from), subject: format_subject(message),
       to: 'info@crasome.com'
@@ -10,7 +10,7 @@ class ContactMailer < ActionMailer::Base
 
   def join_us_request(message, from:)
     @content = message.content
-    @visitor_name = from.name
+    @visitor = from
 
     mail from: format_sender(from), subject: format_subject(message),
       to: 'hr@crasome.com'
