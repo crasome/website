@@ -1,12 +1,5 @@
 class ContactMailer < ActionMailer::Base
 
-  def message_to_us(message, from:)
-    @content = message.content
-    @visitor = from
-
-    mail from: format_sender(from), subject: format_subject(message),
-      to: 'info@crasome.com'
-  end
 
   def join_us_request(contact_form)
     message = contact_form.message
@@ -17,16 +10,33 @@ class ContactMailer < ActionMailer::Base
       to: 'hr@crasome.com'
   end
 
-  def hire_us_request(message, from:)
+  def hire_us_request(contact_form)
+    message = contact_form.message
+    @visitor = contact_form.visitor
+    @company = contact_form.company
     @content = message.content
-    @visitor = from
 
-    mail from: format_sender(from), subject: format_subject(message),
+    from = contact_form.contacts.map do |contact|
+      format_sender(contact)
+    end
+
+    mail from: from, subject: format_subject(message),
       to: 'sales@crasome.com'
   end
 
+  def send_message(contact_form)
+    message = contact_form.message
+    @visitor = contact_form.visitor
+    @content = message.content
+
+    mail from: format_sender(@visitor), subject: format_subject(message),
+      to: 'info@crasome.com'
+  end
+
+
   private
   def format_sender(visitor)
+    return visitor.email unless visitor.name.present?
     "\"#{visitor.name}\" <#{visitor.email}>"
   end
 

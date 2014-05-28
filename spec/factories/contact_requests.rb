@@ -1,15 +1,9 @@
 FactoryGirl.define do
-  factory :visitor, :class => OpenStruct do
+  factory :visitor, :class => Contact::Visitor do
     name "Bob"
     email "bob@example.com"
 
-    factory :client, :class => OpenStruct do
-      name "Dan"
-      email "dan@example.com"
-      company "Crasome"
-    end
-
-    factory :engineer, :class => OpenStruct do
+    factory :engineer, :class => Contact::Engineer do
       name "Jim"
       email "jim@example.com"
       occupation "Ruby engineer"
@@ -20,8 +14,13 @@ FactoryGirl.define do
     end
   end
 
-  factory :message, :class => OpenStruct do
+  factory :message, :class => Contact::Message do
     title "Hello!"
     content "Hello World!"
+  end
+
+  factory :company, :class => Contact::Company do
+    name "Crasome"
+    email "info@crasome.com"
   end
 end

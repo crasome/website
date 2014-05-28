@@ -1,5 +1,5 @@
 module Contact
-  class Visitor
+  class Company
     include Virtus.model strict: true
 
     attribute :name,   String, default: ""

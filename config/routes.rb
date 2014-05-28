@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root :to => "pages#welcome"
 
   namespace :contact do
-    resource :message, only: [:new, :create]
-    resource :join_us, only: [:new, :create]
-    resource :hire_us, only: [:new, :create]
+    post :join_us
+    post :send_message
+    post :hire_us
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
