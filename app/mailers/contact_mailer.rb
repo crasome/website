@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-
+  DOMAIN = "crasome.com"
 
   def join_us_request(contact_form)
     message = contact_form.message
@@ -7,7 +7,7 @@ class ContactMailer < ActionMailer::Base
     @content = message.content
 
     mail from: format_sender(@visitor), subject: format_subject(message),
-      to: 'hr@crasome.com'
+      to: format_destination("hr")
   end
 
   def hire_us_request(contact_form)
@@ -21,7 +21,7 @@ class ContactMailer < ActionMailer::Base
     end
 
     mail from: from, subject: format_subject(message),
-      to: 'sales@crasome.com'
+      to: format_destination("sales")
   end
 
   def send_message(contact_form)
@@ -30,7 +30,7 @@ class ContactMailer < ActionMailer::Base
     @content = message.content
 
     mail from: format_sender(@visitor), subject: format_subject(message),
-      to: 'info@crasome.com'
+      to: format_destination("info")
   end
 
 
@@ -41,6 +41,10 @@ class ContactMailer < ActionMailer::Base
   end
 
   def format_subject(message)
-    "#{action_name.humanize} from crasome.com: #{message.title}"
+    "#{action_name.humanize} from #{DOMAIN}: #{message.title}"
+  end
+
+  def format_destination(group)
+    "#{group}@#{DOMAIN}"
   end
 end
