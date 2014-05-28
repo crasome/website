@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/bmabey/email-spec.git
-  revision: 8f862c22413fe4cb220a8dac6b9206b8b46d1148
+  revision: 65d6ffd7f4cc8d6b52e210b48136d57a4beac9a1
   specs:
-    email_spec (1.5.0)
+    email_spec (1.6.0)
       launchy (~> 2.1)
       mail (~> 2.2)
 
@@ -19,7 +19,7 @@ GIT
 
 GIT
   remote: git://github.com/jnicklas/turnip.git
-  revision: 89351fbdf8eb38621522a008b3b57618beda6ac1
+  revision: 50c19766a6b03c5d3e1a5347163b76664eec7ced
   specs:
     turnip (1.2.1)
       gherkin (>= 2.5)
@@ -78,7 +78,7 @@ GEM
     diff-lcs (1.2.5)
     equalizer (0.0.9)
     erubis (2.7.0)
-    execjs (2.0.2)
+    execjs (2.1.0)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.4.1)
@@ -182,12 +182,12 @@ GEM
       libv8 (~> 3.16.14.0)
       ref
     thor (0.19.1)
-    thread_safe (0.3.3)
+    thread_safe (0.3.4)
     tilt (1.4.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (1.1.0)
+    tzinfo (1.2.0)
       thread_safe (~> 0.1)
     uglifier (2.5.0)
       execjs (>= 0.3.0)
