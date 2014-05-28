@@ -1,23 +1,21 @@
-class Contact::JoinUsController < ApplicationController
-  respond_to :json
+require "contact/join_us_form"
 
-  def new
-  end
+module Contact
+  class JoinUsController < ApplicationController
+    respond_to :json
 
-  def create
-    # TODO: use form object
-    message = OpenStruct.new message_params
-    visitor = OpenStruct.new visitor_params
-    ContactMailer.join_us_request(message, from: visitor).deliver
-    head :accepted
-  end
+    def new
+    end
 
-  private
-  def message_params
-    params.require(:message).permit(:title, :content)
-  end
+    def create
+      JoinUsForm.new(params).tap do |contact_form|
+        contact_form.validate!
 
-  def visitor_params
-    params.require(:visitor).permit(:name, :email, :occupation)
+        ContactMailer.join_us_request(contact_form).deliver
+        render json: contact_form, status: :created
+      end
+    rescue ValidationError
+      render json: $!.errors, status: :bad_request
+    end
   end
 end

@@ -18,6 +18,10 @@ module SharedSteps::Contact
     expect(page).to have_content "sent"
   end
 
+  step "I should see errors in my :contact" do |contact|
+    expect(page).to have_content "validation failed"
+  end
+
   private
   def interaction(interaction_class)
     interaction_class.new self

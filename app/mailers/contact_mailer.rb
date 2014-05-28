@@ -8,11 +8,12 @@ class ContactMailer < ActionMailer::Base
       to: 'info@crasome.com'
   end
 
-  def join_us_request(message, from:)
+  def join_us_request(contact_form)
+    message = contact_form.message
+    @visitor = contact_form.visitor
     @content = message.content
-    @visitor = from
 
-    mail from: format_sender(from), subject: format_subject(message),
+    mail from: format_sender(@visitor), subject: format_subject(message),
       to: 'hr@crasome.com'
   end
 

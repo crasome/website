@@ -22,5 +22,4 @@ describe Contact::HireUsController, :type => :controller do
     expect(email).to have_subject /#{message.title}/
     expect(email).to have_body_text message.content
   end
-
 end

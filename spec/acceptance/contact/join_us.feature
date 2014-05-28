@@ -12,3 +12,7 @@ Feature: Join us
     When I send the join request
     Then email with my request should be sent to "hr@crasome.com"
      And I should see a notification that my message sent
+
+  Scenario: Error in request
+    When I send the invalid join request
+    Then I should see errors in my join request
