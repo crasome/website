@@ -2,7 +2,7 @@ module SharedSteps::Contact
   include StepHelpers::Email
 
   step "I choose the :contact option" do |contact|
-    click_link interaction(contact).link
+    first(:link, interaction(contact).link).click
   end
 
   step "I should see the :contact form" do |contact|

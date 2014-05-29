@@ -4,7 +4,8 @@ module PageSteps
   end
 
   step "I should see a homepage" do
-    expect(page).to have_content "Welcome"
+    be_on "/"
+    expect(page).to have_content "Crasome"
   end
 
   step "I visit the application" do
