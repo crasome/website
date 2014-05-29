@@ -1,7 +1,6 @@
 p Hello!
 
-p #{@visitor.name} wants join our team. He currently works as #{@visitor.occupation}
+p #{@contact.visitor_contact} wants join our team. He currently works as #{@contact.visitor.occupation}
 
-
-p = @content
-
+p = @contact.message
+= render "details", details: @contact.details

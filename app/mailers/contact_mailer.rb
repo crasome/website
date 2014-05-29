@@ -1,50 +1,37 @@
 class ContactMailer < ActionMailer::Base
   DOMAIN = "crasome.com"
 
-  def join_us_request(contact_form)
-    message = contact_form.message
-    @visitor = contact_form.visitor
-    @content = message.content
+  def join_us_request(form)
+    @contact = contact form
 
-    mail from: format_sender(@visitor), subject: format_subject(message),
-      to: format_destination("hr")
+    mail to: format_destination("hr"),
+         **@contact.email_fields
   end
 
-  def hire_us_request(contact_form)
-    message = contact_form.message
-    @visitor = contact_form.visitor
-    @company = contact_form.company
-    @content = message.content
+  def hire_us_request(form)
+    @contact = contact form
 
-    from = contact_form.contacts.map do |contact|
-      format_sender(contact)
-    end
-
-    mail from: from, subject: format_subject(message),
-      to: format_destination("sales")
+    mail to: format_destination("sales"),
+         **@contact.email_fields
   end
 
-  def send_message(contact_form)
-    message = contact_form.message
-    @visitor = contact_form.visitor
-    @content = message.content
+  def send_message(form)
+    @contact = contact form
 
-    mail from: format_sender(@visitor), subject: format_subject(message),
-      to: format_destination("info")
+    mail to: format_destination("info"),
+         **@contact.email_fields
   end
 
+  def domain
+    DOMAIN
+  end
 
   private
-  def format_sender(visitor)
-    return visitor.email unless visitor.name.present?
-    "\"#{visitor.name}\" <#{visitor.email}>"
-  end
-
-  def format_subject(message)
-    "#{action_name.humanize} from #{DOMAIN}: #{message.title}"
+  def contact(form)
+    Contact::EmailPresenter.new form, self
   end
 
   def format_destination(group)
-    "#{group}@#{DOMAIN}"
+    "#{group}@#{domain}"
   end
 end

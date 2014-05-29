@@ -1,6 +1,6 @@
 p Hello!
 
-p #{@visitor.name} wants to contact you
+p #{@contact.visitor_contact} wants to contact you.
 
-p = @content
-
+p = @contact.message
+= render "details", details: @contact.details

@@ -1,7 +1,6 @@
 p Hello!
 
-p #{@visitor.name} wants hire us. He represents the #{@company.name} company
+p #{@contact.visitor_contact} wants to hire us. He represents the #{@contact.company_contact} company
 
-
-p = @content
-
+p = @contact.message
+= render "details", details: @contact.details

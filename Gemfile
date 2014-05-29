@@ -16,6 +16,7 @@ gem 'therubyracer',     platforms: :ruby
 
 gem "slim-rails"
 gem "virtus", "~> 1.0"
+gem "concord"
 
 group :development, :test do
   gem 'rspec-rails',         '>= 3.0.0.rc1'
