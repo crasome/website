@@ -1,18 +1,24 @@
-- send_us_link = link_to "send a message", contact_new_message_path, rel: :send_message
+- send_us_link = link_to "Send a message", contact_new_message_path, rel: :send_message
 .welcome
-  h2 Crasome
+  .company-name Crasome
   .contact-options
     .hire.option-tab
-      .description The best company ever :D
-      .action
+      .icon
+        span.glyphicon.glyphicon-search
+      .description Looking for solution?
+      .actions
         .btn.btn-outline-inverse.btn-lg = link_to "Hire Us", contact_new_hire_request_path, rel: :hire_request
         .send-message-link = send_us_link
     .join.option-tab
-      .description Craft software. Be awesome!
-      .action
-        .btn.btn-outline-inverse.btn-lg = link_to "Join Us", contact_new_join_request_path, rel: :join_request
+      .icon
+        span.glyphicon.glyphicon-cog
+      .description Craft masterpiece software
+      .actions
+        .btn.btn-outline-inverse.btn-lg = link_to "Join the team", contact_new_join_request_path, rel: :join_request
         .send-message-link = send_us_link
     .send-message.option-tab
-      .description Or ask a question
-      .action
+      .icon
+        span.glyphicon.glyphicon-info-sign
+      .description Ask a question
+      .actions
         .btn.btn-outline-inverse.btn-lg = send_us_link

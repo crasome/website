@@ -1,14 +1,32 @@
+// TODO: clean all this mess.
+// TODO: use ems
+// TODO: use sass variables
+// TODO: create components
+body
+  font-size: 18px
+  font-family: arial,helvetica,geneva,pragmatica,sans-serif,'Courier New',courier
+
 .welcome
   text-align: center
+  width: 100%
+
+.company-name
+  font-size: 4em
 
 .contact-options
+  max-width: 1400px
   color: white
   display: flex
   flex-flow: row wrap
   align-content: stretch
   margin: 2%
+  margin-top: 0
+
+  .icon
+    font-size: 7em
 
   .option-tab
+    font-size: 1.0em
     display: flex
     flex-direction: column
     align-items: center
@@ -36,6 +54,7 @@
         color: green
 
   .send-message-link
+    font-size: 0.75em
     display: none
 
   .send-message
@@ -44,7 +63,7 @@
       a
         color: #6f5499
 
-  @media (min-width: 768px)
+  @media (min-width: 500px)
     .send-message-link
       display: block
     .send-message
@@ -56,20 +75,21 @@
     .description
       margin-bottom: 20%
 
-
-  @media (min-width: 1200px)
+  @media (min-width: 1000px)
+    .option-tab
+      font-size: 1.2em
     .send-message-link
       display: none
     .send-message
       display: flex
-    .btn-outline-inverse
-      width: auto
-      margin: 20px 5px 20px 0
-      padding: 18px 24px
-      font-size: 21px
 
+@media (min-width: 1400px)
+  .contact-options
+    margin-left: auto
+    margin-right: auto
 
 .btn-outline-inverse
+  font-size: 1.0em
   background-color: transparent
   border-color: white
   margin: 10px
@@ -80,3 +100,8 @@
     background-color: white
     border-color: white
 
+@media (min-width: 1200px)
+  .btn-outline-inverse
+    width: auto
+    margin: 20px 5px 20px 0
+    padding: 18px 24px
