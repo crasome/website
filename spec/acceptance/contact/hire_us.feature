@@ -4,10 +4,10 @@ Feature: Hire us
   I want to hire the company
   To work for me
 
-  Scenario: Show the hire us form
+  Scenario: Show the hire form
     Given I am on the homepage
-    When I choose the hire us option
-    Then I should see the hire us form
+    When I choose the hire option
+    Then I should see the hire request form
 
   Scenario: Send hire request
     When I send the hire request

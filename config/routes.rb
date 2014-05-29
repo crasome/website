@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   root :to => "pages#welcome"
 
   namespace :contact do
-    post :join_us
+    post :join_us, action: :join_request
+    post :hire_us, action: :hire_request
     post :send_message
-    post :hire_us
 
     get :send_message,  action: :new,  as: :new_message
     get :join_us,       action: :new,  as: :new_join_request

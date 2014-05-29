@@ -1,7 +1,7 @@
 require "form_validation"
 
 module Contact
-  class HireUsForm
+  class HireRequest
     include Virtus.model
     include FormValidation
 

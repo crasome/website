@@ -1,7 +1,7 @@
 require "form_validation"
 
 module Contact
-  class JoinUsForm
+  class JoinRequest
     include Virtus.model
     include FormValidation
 

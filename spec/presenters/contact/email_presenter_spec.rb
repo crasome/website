@@ -6,9 +6,9 @@ describe Contact::EmailPresenter do
   let(:visitor) { build :visitor }
   let(:company) { build :company }
 
-  let(:form) { Contact::HireUsForm.new visitor: visitor,
-                                       company: company,
-                                       message: message }
+  let(:form) { Contact::HireRequest.new visitor: visitor,
+                                     company: company,
+                                     message: message }
 
   describe "details" do
     it "pretty prints the form details" do

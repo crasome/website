@@ -1,14 +1,14 @@
 class ContactMailer < ActionMailer::Base
   DOMAIN = "crasome.com"
 
-  def join_us_request(form)
+  def join_request(form)
     @contact = contact form
 
     mail to: format_destination("hr"),
          **@contact.email_fields
   end
 
-  def hire_us_request(form)
+  def hire_request(form)
     @contact = contact form
 
     mail to: format_destination("sales"),

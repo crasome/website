@@ -4,23 +4,23 @@ class ContactController < ApplicationController
   # TODO: remove
   def new
     @form_action = request.path
-    @form_id = @form_action.split("/").last << "_form"
+    @form_id = @form_action.sub("_us", "_request").split("/").last << "_form"
   end
 
-  def join_us
-    contact_us Contact::JoinUsForm.new(params) do |form|
-      ContactMailer.join_us_request(form).deliver
+  def join_request
+    contact_us Contact::JoinRequest.new(params) do |form|
+      ContactMailer.join_request(form).deliver
     end
   end
 
-  def hire_us
-    contact_us Contact::HireUsForm.new(params) do |form|
-      ContactMailer.hire_us_request(form).deliver
+  def hire_request
+    contact_us Contact::HireRequest.new(params) do |form|
+      ContactMailer.hire_request(form).deliver
     end
   end
 
   def send_message
-    contact_us Contact::SendMessageForm.new(params) do |form|
+    contact_us Contact::SendMessage.new(params) do |form|
       ContactMailer.send_message(form).deliver
     end
   end

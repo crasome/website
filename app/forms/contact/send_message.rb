@@ -1,7 +1,7 @@
 require "form_validation"
 
 module Contact
-  class SendMessageForm
+  class SendMessage
     include Virtus.model
     include FormValidation
 

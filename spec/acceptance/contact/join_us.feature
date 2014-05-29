@@ -3,10 +3,10 @@ Feature: Join us
   As an engineer
   I want to join the company
 
-  Scenario: Show the join us form
+  Scenario: Show the join form
     Given I am on the homepage
-    When I choose the join us option
-    Then I should see the join us form
+    When I choose the join option
+    Then I should see the join request form
 
   Scenario: Send join request
     When I send the join request

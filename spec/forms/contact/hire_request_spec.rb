@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Contact::HireUsForm do
+describe Contact::HireRequest do
   let(:visitor) { build :visitor }
   let(:company) { build :company }
   let(:message) { build :message }

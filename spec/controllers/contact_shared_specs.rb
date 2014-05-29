@@ -1,4 +1,4 @@
-shared_examples_for "contact us" do
+shared_examples_for "contact" do
   include EmailSpec::Helpers
   include EmailSpec::Matchers
   include ActionMailer::TestHelper
@@ -18,7 +18,7 @@ shared_examples_for "contact us" do
   end
 
   it "use the ContactMailer" do
-    expect(ContactMailer).to receive(email_request) { double.as_null_object }
+    expect(ContactMailer).to receive(action) { double.as_null_object }
 
     post action, format: :json,
       message: message,
