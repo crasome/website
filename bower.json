@@ -1,0 +1,6 @@
+{
+  "name": "crasome-website",
+  "dependencies": {
+    "angular": "~1.2.16"
+  }
+}
