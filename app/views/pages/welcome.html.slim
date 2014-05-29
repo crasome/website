@@ -1,22 +1,32 @@
-- send_us_link = link_to "Send a message", contact_new_message_path, rel: :send_message
+/* FIXME: Extract from template */
+- send_us_link = link_to "send a message", contact_new_message_path, rel: :send_message
 .contact-options
+
   .hire.option-tab
     .icon
-      span.glyphicon.glyphicon-search
+      a href="#{contact_new_hire_request_path}" rel="hire_request"
+        span.glyphicon.glyphicon-search
     .description Looking for solution?
     .actions
-      .btn.btn-outline-inverse.btn-lg = link_to "Hire Us", contact_new_hire_request_path, rel: :hire_request
+      a.btn.btn-outline-inverse.btn-lg href="#{contact_new_hire_request_path}" rel="hire_request"
+        | Hire us
       .send-message-link = send_us_link
+
   .join.option-tab
     .icon
-      span.glyphicon.glyphicon-cog
+      a href="#{contact_new_join_request_path}" rel="join_request"
+        span.glyphicon.glyphicon-cog
     .description Craft masterpiece software
     .actions
-      .btn.btn-outline-inverse.btn-lg = link_to "Join the team", contact_new_join_request_path, rel: :join_request
+      a.btn.btn-outline-inverse.btn-lg href="#{contact_new_join_request_path}" rel="join_request"
+        | Join the team
       .send-message-link = send_us_link
+
   .send-message.option-tab
     .icon
-      span.glyphicon.glyphicon-info-sign
+      a href="#{contact_new_message_path}" rel="send_message"
+        span.glyphicon.glyphicon-info-sign
     .description Ask a question
     .actions
-      .btn.btn-outline-inverse.btn-lg = send_us_link
+      a.btn.btn-outline-inverse.btn-lg href="#{contact_new_message_path}" rel="send_message"
+        | Send a message
