@@ -1,6 +1,7 @@
 {
   "name": "crasome-website",
   "dependencies": {
-    "angular": "~1.2.16"
+    "angular": "~1.2.16",
+    "angular-bootstrap": "~0.11.0"
   }
 }

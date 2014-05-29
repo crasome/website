@@ -1,4 +1,13 @@
-h2 Welcome
-p = link_to "Hire Us", contact_new_hire_request_path, rel: :hire_request
-p = link_to "Join Us", contact_new_join_request_path, rel: :join_request
-p = link_to "send a message", contact_new_message_path, rel: :send_message
+h2 Crasome
+.welcome
+  .contact-options
+    .hire.option-tab
+      .description The best company ever :D
+      .action
+        .btn.btn-outline-inverse.btn-lg = link_to "Hire Us", contact_new_hire_request_path, rel: :hire_request
+        .send-message = link_to "send a message", contact_new_message_path, rel: :send_message
+    .join.option-tab
+      .description Craft software. Be awesome!
+      .action
+        .btn.btn-outline-inverse.btn-lg = link_to "Join Us", contact_new_join_request_path, rel: :join_request
+        .send-message = link_to "send a message", contact_new_message_path, rel: :send_message

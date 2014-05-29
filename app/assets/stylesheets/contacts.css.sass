@@ -1,0 +1,54 @@
+.contact-options
+  color: white
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+
+  .option-tab
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex: 1 100%
+    padding: 5%
+
+  // display in a row
+  @media all and (min-width: 600px)
+    .option-tab
+      flex: 1 auto
+
+  .description
+    margin-bottom: 10%
+
+  a
+    color: white
+
+  .hire
+    background-color: darkblue
+    .btn-outline-inverse:hover
+      a
+        color: darkblue
+
+  .join
+    background-color: green
+    .btn-outline-inverse:hover
+      a
+        color: green
+
+.btn-outline-inverse
+  background-color: transparent
+  border-color: white
+  margin: 10px
+  &:hover
+    a
+      text-decoration: none
+    text-shadow: none
+    background-color: white
+    border-color: white
+
+@media (min-width: 600px)
+  .btn-outline-inverse
+    width: auto
+      margin: 20px 5px 20px 0
+      padding: 18px 24px
+      font-size: 21px
+
