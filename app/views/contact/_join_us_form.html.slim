@@ -1,12 +1,15 @@
-= form_tag "/contact/join_request", method: :post, id: :join_request_form do
-  .row
-    = text_field_tag "visitor[name]", "", placeholder: "Your name"
-    = text_field_tag "visitor[email]", "", placeholder: "Your email"
-  .row
-    = text_field_tag "visitor[ocupation]", "", placeholder: "Your ocupation"
-  .row
-    = text_field_tag "message[title]", "", placeholder: "Subject"
-  .row
-    = text_area_tag "message[content]", "", placeholder: "Message"
-  .row
-    = submit_tag "Send"
+.contact-form.join ng-controller="ContactCtrl"
+  form.form-horizontal#join-request-form name="ContactForm"
+    fieldset.form-group
+      legend Contact person
+      input.form-control ng-model="visitor.name"  placeholder="Your name"  type="text"  required="required"
+      input.form-control ng-model="visitor.email" placeholder="Your email" type="email" required="required"
+    fieldset.form-group
+      legend Job position
+      input.form-control ng-model="visitor.ocupation" placeholder="Your ocupation" type="text" required="required"
+    fieldset.form-group
+      legend Request
+      input.form-control    ng-model="message.title"   placeholder="Subject" type="text" required="required"
+      textarea.form-control ng-model="message.content" placeholder="Message" rows="10"   required="required"
+    fieldset.form-group
+      button.btn.btn-success ng-disabled="!ContactForm.$valid" ng-click="sendRequest('/contact/join_request.json')" Send

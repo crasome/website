@@ -12,4 +12,5 @@
 //
 //= require angular
 //= require angular-bootstrap
-//= require_tree .
+//= require contacts
+//= require_tree ./controllers

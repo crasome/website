@@ -1,13 +1,16 @@
-= form_tag "/contact/hire_request", method: :post, id: :hire_request_form, class: "form-horizontal" do
-  fieldset.form-group
-    = text_field_tag "visitor[name]",   "",  placeholder: "Your name",   class: "form-control"
-    = text_field_tag "visitor[email]",  "",  placeholder: "Your email",  class: "form-control"
-  fieldset.form-group
-    = text_field_tag "company[name]",   "",  placeholder: "Company name",   class: "form-control"
-    = text_field_tag "company[email]",  "",  placeholder: "Company email",  class: "form-control"
-  fieldset.form-group
-    = text_field_tag "message[title]", "", placeholder: "Subject", class: "form-control"
-  fieldset.form-group
-    = text_area_tag "message[content]", "", placeholder: "Message", class: "form-control"
-  fieldset.form-group
-    = submit_tag "Send", class: "btn btn-success"
+.contact-form.hire ng-controller="ContactCtrl"
+  form.form-horizontal#hire-request-form name="ContactForm"
+    fieldset.form-group
+      legend Contact person
+      input.form-control ng-model="visitor.name"  placeholder="Your name"  type="text"
+      input.form-control ng-model="visitor.email" placeholder="Your email" type="email"
+    fieldset.form-group
+      legend Company
+      input.form-control ng-model="company.name"  placeholder="Company name"  type="text"
+      input.form-control ng-model="company.email" placeholder="Company email" type="email"
+    fieldset.form-group
+      legend Request
+      input.form-control    ng-model="message.title"   placeholder="Subject" type="text" required="required"
+      textarea.form-control ng-model="message.content" placeholder="Message" rows="10"
+    fieldset.form-group
+      button.btn.btn-success ng-disabled="!ContactForm.$valid" ng-click="sendRequest('/contact/hire_request.json')" Send
