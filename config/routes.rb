@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     post :join_us
     post :send_message
     post :hire_us
+
+    get :send_message,  action: :new,  as: :new_message
+    get :join_us,       action: :new,  as: :new_join_request
+    get :hire_us,       action: :new,  as: :new_hire_request
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

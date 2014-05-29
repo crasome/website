@@ -9,8 +9,8 @@ module SharedSteps::Contact
     expect(page).to have_css interaction(contact).form_name
   end
 
-  step "email with my message/request should be sent" do |email|
-    expect(last_email).to have_body_text @message.content
+  step "email with my message/request should be sent" do
+    expect(last_email.body).to include @message.content
     expect(last_email.from).to include @visitor.email
   end
 

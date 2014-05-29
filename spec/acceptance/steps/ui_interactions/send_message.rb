@@ -7,13 +7,13 @@ module UiInteractions
       super(
         context,
         link:         "send_message",
-        form_name:    "#message_form",
+        form_name:    "#send_message_form",
         form_submit:  "Send"
       )
     end
 
     def send_message(*args)
-      visit new_contact_message_path
+      visit contact_new_message_path
       fill_and_submit_form *args
     end
 

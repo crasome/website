@@ -1,8 +1,11 @@
-= form_tag "/contact/hire_us", method: :post, id: :hire_us_form do
+= form_tag @form_action, method: :post, id: @form_id do
   .row
     = text_field_tag "visitor[name]", "", placeholder: "Your name"
     = text_field_tag "visitor[email]", "", placeholder: "Your email"
-    = text_field_tag "visitor[company]", "", placeholder: "Company"
+    = text_field_tag "visitor[occupation]", "", placeholder: "Your current occupation"
+  .row
+    = text_field_tag "company[name]", "", placeholder: "Company name"
+    = text_field_tag "company[email]", "", placeholder: "Company email"
   .row
     = text_field_tag "message[title]", "", placeholder: "Subject"
   .row

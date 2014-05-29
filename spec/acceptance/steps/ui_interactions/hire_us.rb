@@ -13,7 +13,7 @@ module UiInteractions
     end
 
     def send_hire_request(*args)
-      visit new_contact_hire_us_path
+      visit contact_new_hire_request_path
       fill_and_submit_form *args
     end
 

@@ -13,7 +13,7 @@ module UiInteractions
     end
 
     def send_join_request(*args)
-      visit new_contact_join_us_path
+      visit contact_new_join_request_path
       fill_and_submit_form *args
     end
 

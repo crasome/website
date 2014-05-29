@@ -1,6 +1,12 @@
 class ContactController < ApplicationController
   respond_to :json
 
+  # TODO: remove
+  def new
+    @form_action = request.path
+    @form_id = @form_action.split("/").last << "_form"
+  end
+
   def join_us
     contact_us Contact::JoinUsForm.new(params) do |form|
       ContactMailer.join_us_request(form).deliver
