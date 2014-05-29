@@ -1,15 +1,7 @@
-= form_tag @form_action, method: :post, id: @form_id do
-  .row
-    = text_field_tag "visitor[name]", "", placeholder: "Your name"
-    = text_field_tag "visitor[email]", "", placeholder: "Your email"
-    = text_field_tag "visitor[occupation]", "", placeholder: "Your current occupation"
-  .row
-    = text_field_tag "company[name]", "", placeholder: "Company name"
-    = text_field_tag "company[email]", "", placeholder: "Company email"
-  .row
-    = text_field_tag "message[title]", "", placeholder: "Subject"
-  .row
-    = text_area_tag "message[content]", "", placeholder: "Message"
-  .row
-    = submit_tag "Send"
-
+tabset justified="true"
+  tab heading="Hire us"
+    = render "hire_us_form"
+  tab heading="Join us"
+    = render "join_us_form"
+  tab heading="Send message"
+    = render "send_message_form"
