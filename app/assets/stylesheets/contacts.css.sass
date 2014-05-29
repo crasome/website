@@ -13,21 +13,11 @@
     flex-direction: column
     align-items: center
     flex: 1 100%
-    padding: 5%
-    padding-bottom: 2%
+    padding: 10%
     margin: 1%
 
-  // display in a row
-  @media (min-width: 768px)
-    .option-tab
-      flex: 1 auto
-
   .description
-    margin-bottom: 5%
-
-  @media (min-width: 768px)
-    .description
-      margin-bottom: 20%
+    margin-bottom: 10%
 
   a
     color: white
@@ -44,11 +34,39 @@
       a
         color: green
 
+  .send-message-link
+    display: none
+
   .send-message
     background-color: #6f5499
     .btn-outline-inverse:hover
       a
-        color: darkblue
+        color: #6f5499
+
+  @media (min-width: 768px)
+    .send-message-link
+      display: block
+    .send-message
+      display: none
+    .option-tab
+      flex: 1 auto
+      padding: 5%
+      padding-bottom: 2%
+    .description
+      margin-bottom: 20%
+
+
+  @media (min-width: 1200px)
+    .send-message-link
+      display: none
+    .send-message
+      display: flex
+    .btn-outline-inverse
+      width: auto
+      margin: 20px 5px 20px 0
+      padding: 18px 24px
+      font-size: 21px
+
 
 .btn-outline-inverse
   background-color: transparent
@@ -60,11 +78,4 @@
     text-shadow: none
     background-color: white
     border-color: white
-
-@media (min-width: 1024px)
-  .btn-outline-inverse
-    width: auto
-    margin: 20px 5px 20px 0
-    padding: 18px 24px
-    font-size: 21px
 
