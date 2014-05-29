@@ -10,7 +10,7 @@ Feature: Join us
 
   Scenario: Send join request
     When I send the join request
-    Then email with my request should be sent to "hr@crasome.com"
+    Then email with my request should be sent
      And I should see a notification that my message sent
 
   Scenario: Error in request

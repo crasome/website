@@ -12,21 +12,23 @@ module UiInteractions
       )
     end
 
-    def send_hire_request(message, visitor)
+    def send_hire_request(*args)
       visit new_contact_hire_us_path
-      fill_and_submit_form message, visitor
+      fill_and_submit_form *args
     end
 
     private
 
-    def fill_and_submit_form(message, visitor)
+    def fill_and_submit_form(message:, visitor:, company:)
       within form_name do
-        fill_in "visitor_name", with: visitor.name
-        fill_in "visitor_email", with: visitor.email
-        fill_in "visitor_company", with: visitor.company
+        fill_in "visitor_name",   with: visitor.name
+        fill_in "visitor_email",  with: visitor.email
 
-        fill_in "message_title", with: message.title
-        fill_in "message_content", with: message.content
+        fill_in "company_name",   with: company.name
+        fill_in "company_email",  with: company.email
+
+        fill_in "message_title",    with: message.title
+        fill_in "message_content",  with: message.content
 
         click_button form_submit
       end

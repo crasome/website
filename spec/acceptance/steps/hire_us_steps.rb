@@ -3,8 +3,14 @@ steps_for :hire_us do
 
   step "I send the :contact request" do |contact|
     @message = build :message
-    @visitor = build :client
-    interaction(contact).send_hire_request @message, @visitor
+    @visitor = build :visitor
+    @company = build :company
+
+    interaction(contact).send_hire_request(
+      message: @message,
+      visitor: @visitor,
+      company: @company
+    )
   end
 
 end

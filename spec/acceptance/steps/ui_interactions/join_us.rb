@@ -12,14 +12,14 @@ module UiInteractions
       )
     end
 
-    def send_join_request(message, visitor)
+    def send_join_request(*args)
       visit new_contact_join_us_path
-      fill_and_submit_form message, visitor
+      fill_and_submit_form *args
     end
 
     private
 
-    def fill_and_submit_form(message, visitor)
+    def fill_and_submit_form(message:, visitor:)
       within form_name do
         fill_in "visitor_name", with: visitor.name
         fill_in "visitor_email", with: visitor.email

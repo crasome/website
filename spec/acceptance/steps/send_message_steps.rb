@@ -4,7 +4,11 @@ steps_for :send_message do
   step "I send :contact" do |contact|
     @message = build :message
     @visitor = build :visitor
-    interaction(contact).send_message @message, @visitor
+
+    interaction(contact).send_message(
+      message: @message,
+      visitor: @visitor,
+    )
   end
 
 end

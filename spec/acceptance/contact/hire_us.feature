@@ -11,5 +11,5 @@ Feature: Hire us
 
   Scenario: Send hire request
     When I send the hire request
-    Then email with my request should be sent to "sales@crasome.com"
+    Then email with my request should be sent
      And I should see a notification that my message sent

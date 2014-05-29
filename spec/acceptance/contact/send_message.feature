@@ -11,5 +11,5 @@ Feature: Send message
 
   Scenario: Send message
     When I send message
-    Then email with my message should be sent to "info@crasome.com"
+    Then email with my message should be sent
      And I should see a notification that my message sent

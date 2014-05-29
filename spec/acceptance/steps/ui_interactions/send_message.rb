@@ -12,14 +12,14 @@ module UiInteractions
       )
     end
 
-    def send_message(message, visitor)
+    def send_message(*args)
       visit new_contact_message_path
-      fill_and_submit_form message, visitor
+      fill_and_submit_form *args
     end
 
     private
 
-    def fill_and_submit_form(message, visitor)
+    def fill_and_submit_form(message:, visitor:)
       within form_name do
         fill_in "visitor_name", with: visitor.name
         fill_in "visitor_email", with: visitor.email
