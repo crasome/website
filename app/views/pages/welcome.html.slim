@@ -1,3 +1,4 @@
+- send_us_link = link_to "send a message", contact_new_message_path, rel: :send_message
 .welcome
   h2 Crasome
   .contact-options
@@ -5,13 +6,13 @@
       .description The best company ever :D
       .action
         .btn.btn-outline-inverse.btn-lg = link_to "Hire Us", contact_new_hire_request_path, rel: :hire_request
-        .send-message-link = link_to "send a message", contact_new_message_path, rel: :send_message
+        .send-message-link = send_us_link
     .join.option-tab
       .description Craft software. Be awesome!
       .action
         .btn.btn-outline-inverse.btn-lg = link_to "Join Us", contact_new_join_request_path, rel: :join_request
-        .send-message-link = link_to "send a message", contact_new_message_path, rel: :send_message
+        .send-message-link = send_us_link
     .send-message.option-tab
       .description Or ask a question
       .action
-        .btn.btn-outline-inverse.btn-lg = link_to "send a message", contact_new_message_path, rel: :send_message
+        .btn.btn-outline-inverse.btn-lg = send_us_link
