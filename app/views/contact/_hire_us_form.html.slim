@@ -1,13 +1,13 @@
-= form_tag "/contact/hire_request", method: :post, id: :hire_request_form do
-  .row
-    = text_field_tag "visitor[name]", "", placeholder: "Your name"
-    = text_field_tag "visitor[email]", "", placeholder: "Your email"
-  .row
-    = text_field_tag "company[name]", "", placeholder: "Company name"
-    = text_field_tag "company[email]", "", placeholder: "Company email"
-  .row
-    = text_field_tag "message[title]", "", placeholder: "Subject"
-  .row
-    = text_area_tag "message[content]", "", placeholder: "Message"
-  .row
-    = submit_tag "Send"
+= form_tag "/contact/hire_request", method: :post, id: :hire_request_form, class: "form-horizontal" do
+  fieldset.form-group
+    = text_field_tag "visitor[name]",   "",  placeholder: "Your name",   class: "form-control"
+    = text_field_tag "visitor[email]",  "",  placeholder: "Your email",  class: "form-control"
+  fieldset.form-group
+    = text_field_tag "company[name]",   "",  placeholder: "Company name",   class: "form-control"
+    = text_field_tag "company[email]",  "",  placeholder: "Company email",  class: "form-control"
+  fieldset.form-group
+    = text_field_tag "message[title]", "", placeholder: "Subject", class: "form-control"
+  fieldset.form-group
+    = text_area_tag "message[content]", "", placeholder: "Message", class: "form-control"
+  fieldset.form-group
+    = submit_tag "Send", class: "btn btn-success"
