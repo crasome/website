@@ -2,6 +2,10 @@
 // TODO: use ems
 // TODO: use sass variables
 // TODO: create components
+html, body
+  margin: 0
+  padding: 0
+
 body
   font-size: 18px
   font-family: arial,helvetica,geneva,pragmatica,sans-serif,'Courier New',courier
@@ -15,15 +19,18 @@ body
 
 .contact-options
   max-width: 1400px
+  margin: 0 auto
+
   color: white
   display: flex
   flex-flow: row wrap
   align-content: stretch
-  margin: 2%
-  margin-top: 0
 
   .icon
     font-size: 7em
+
+  a
+    color: white
 
   .option-tab
     font-size: 1.0em
@@ -35,11 +42,9 @@ body
     margin: 1%
     width: 0
 
-  .description
-    margin-bottom: 10%
-
-  a
-    color: white
+    .description
+      flex: 1
+      margin-bottom: 10%
 
   .hire
     background-color: darkblue
@@ -53,40 +58,15 @@ body
       a
         color: green
 
-  .send-message-link
-    font-size: 0.75em
-    display: none
-
   .send-message
     background-color: #6f5499
     .btn-outline-inverse:hover
       a
         color: #6f5499
 
-  @media (min-width: 500px)
-    .send-message-link
-      display: block
-    .send-message
-      display: none
-    .option-tab
-      flex: 1 auto
-      padding: 5%
-      padding-bottom: 2%
-    .description
-      margin-bottom: 20%
-
-  @media (min-width: 1000px)
-    .option-tab
-      font-size: 1.2em
-    .send-message-link
-      display: none
-    .send-message
-      display: flex
-
-@media (min-width: 1400px)
-  .contact-options
-    margin-left: auto
-    margin-right: auto
+  .send-message-link
+    font-size: 0.75em
+    display: none
 
 .btn-outline-inverse
   font-size: 1.0em
@@ -100,7 +80,40 @@ body
     background-color: white
     border-color: white
 
-@media (min-width: 1200px)
+@media (min-width: 500px)
+  .contact-options
+    max-width: 550px
+
+    .option-tab
+      flex: 1 auto
+      padding: 7%
+      .description
+        margin-bottom: 20%
+
+    .send-message-link
+      display: block
+    .send-message
+      display: none
+
+@media (min-width: 750px)
+  .contact-options
+    max-width: 800px
+
+    .option-tab
+      padding: 5%
+
+    .send-message-link
+      display: none
+    .send-message
+      display: flex
+
+@media (min-width: 1000px)
+  .contact-options
+    max-width: 1000px
+
+  .welcome
+    font-size: 1.2em
+
   .btn-outline-inverse
     width: auto
     margin: 20px 5px 20px 0
