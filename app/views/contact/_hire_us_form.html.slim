@@ -1,4 +1,4 @@
-.contact-form.hire ng-controller="ContactCtrl"
+.contact-form.hire ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/hire_request.json')"
   form.form-horizontal#hire-request-form name="ContactForm"
     fieldset.form-group
       legend Contact person
@@ -13,4 +13,4 @@
       input.form-control    ng-model="message.title"   placeholder="Subject" type="text" required="required"
       textarea.form-control ng-model="message.content" placeholder="Message" rows="10"
     fieldset.form-group
-      button.btn.btn-success ng-disabled="!ContactForm.$valid" ng-click="sendRequest('/contact/hire_request.json')" Send
+      button.btn.btn-success Send

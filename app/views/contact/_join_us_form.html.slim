@@ -1,4 +1,4 @@
-.contact-form.join ng-controller="ContactCtrl"
+.contact-form.join ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/join_request.json')"
   form.form-horizontal#join-request-form name="ContactForm"
     fieldset.form-group
       legend Contact person
@@ -12,4 +12,4 @@
       input.form-control    ng-model="message.title"   placeholder="Subject" type="text" required="required"
       textarea.form-control ng-model="message.content" placeholder="Message" rows="10"   required="required"
     fieldset.form-group
-      button.btn.btn-success ng-disabled="!ContactForm.$valid" ng-click="sendRequest('/contact/join_request.json')" Send
+      button.btn.btn-success Send

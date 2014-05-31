@@ -1,4 +1,4 @@
-.contact-form.send-message ng-controller="ContactCtrl"
+.contact-form.send-message ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/send_message.json')"
   form.form-horizontal#send-message-form name="ContactForm"
     fieldset.form-group
       legend Contact person
@@ -9,4 +9,4 @@
       input.form-control    ng-model="message.title"   placeholder="Subject" type="text" required="required"
       textarea.form-control ng-model="message.content" placeholder="Message" rows="10"   required="required"
     fieldset.form-group
-      button.btn.btn-success ng-disabled="!ContactForm.$valid" ng-click="sendRequest('/contact/send_message.json')" Send
+      button.btn.btn-success Send
