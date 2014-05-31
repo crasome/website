@@ -1,16 +1,20 @@
 .contact-form.hire ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/hire_request.json')"
-  form.form-horizontal#hire-request-form name="ContactForm"
+  form.form-horizontal#hire-request-form { name="ContactForm" }
+
     fieldset.form-group
       legend Contact person
-      input.form-control ng-model="visitor.name"  placeholder="Your name"  type="text"
-      input.form-control ng-model="visitor.email" placeholder="Your email" type="email"
+      input.form-control { ng-model="visitor.name"  placeholder="Your name"  type="text"  }
+      input.form-control { ng-model="visitor.email" placeholder="Your email" type="email" }
+
     fieldset.form-group
       legend Company
-      input.form-control ng-model="company.name"  placeholder="Company name"  type="text"
-      input.form-control ng-model="company.email" placeholder="Company email" type="email"
+      input.form-control { ng-model="company.name"  placeholder="Company name"  type="text"  }
+      input.form-control { ng-model="company.email" placeholder="Company email" type="email" }
+
     fieldset.form-group
       legend Request
-      input.form-control    ng-model="message.title"   placeholder="Subject" type="text" required="required"
-      textarea.form-control ng-model="message.content" placeholder="Message" rows="10"
+      input.form-control    { required ng-model="message.title"   placeholder="Subject" type="text" }
+      textarea.form-control {          ng-model="message.content" placeholder="Message" rows="10"   }
+
     fieldset.form-group
       button.btn.btn-success Send
