@@ -1,7 +1,5 @@
-@app.controller "ContactCtrl", [
-  "$scope", "$http",
+@app.controller "ContactCtrl", ["$scope", "$http",
   ($scope, $http) ->
-    "use strict"
     $scope.visitor = {}
     $scope.company = {}
     $scope.message = {}
