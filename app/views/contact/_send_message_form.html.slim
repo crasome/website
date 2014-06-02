@@ -9,7 +9,7 @@
     fieldset.form-group
       legend Message
       = field "message.title",    required: true,  placeholder: "Subject"
-      textarea.form-control [ required ng-model="message.content" placeholder="Message" rows="10" ]
+      textarea.form-control [ required ng-model="message.content" name="message.content" placeholder="Message" rows="10" ]
 
     fieldset.form-group
       button.btn.btn-success Send

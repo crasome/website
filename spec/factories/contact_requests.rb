@@ -6,7 +6,7 @@ FactoryGirl.define do
     factory :engineer, :class => Contact::Engineer do
       name "Jim"
       email "jim@example.com"
-      occupation "Ruby engineer"
+      position "Ruby engineer"
     end
 
     trait :invalid do

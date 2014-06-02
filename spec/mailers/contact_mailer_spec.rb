@@ -7,8 +7,8 @@ describe ContactMailer do
     let(:form) { Contact::JoinRequest.new visitor: visitor }
     let(:email) { described_class.join_request form }
 
-    it "includes visitor occupation" do
-      expect(email.body).to include visitor.occupation
+    it "includes visitor position" do
+      expect(email.body).to include visitor.position
     end
   end
 

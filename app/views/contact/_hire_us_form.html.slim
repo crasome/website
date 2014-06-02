@@ -15,7 +15,7 @@
     fieldset.form-group
       legend Request
       = field "message.title",    required: true, placeholder: "Subject"
-      textarea.form-control ng-model="message.content" placeholder="Message" rows="10"
+      textarea.form-control ng-model="message.content" name="message.content" placeholder="Message" rows="10"
 
     fieldset.form-group
       button.btn.btn-success Send
