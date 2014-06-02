@@ -10,6 +10,15 @@ html { ng-app="contacts" }
     = csrf_meta_tags
 
   body
+    header.header
+      .logo
+        .company-prefix ~$
+        .company-logo
+          .company-name = link_to "Crasome", root_url
+          .company-slogan
+            span.company-slogan-main @craft
+            span.company-slogan-secondary {}[:software]
     .page
-      .company-name Crasome
       = yield
+    footer.footer
+

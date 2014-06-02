@@ -1,15 +1,15 @@
 .contact-form.send-message ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/send_message.json')"
-  form.form-horizontal#send-message-form { name="ContactForm" }
+  form#send-message-form { name="ContactForm" }
 
     fieldset.form-group
       legend Contact person
-      input.form-control { required ng-model="visitor.name"  placeholder="Your name"  type="text" }
-      input.form-control { required ng-model="visitor.email" placeholder="Your email" type="email"}
+      = field "visitor.name",   required: true,  placeholder: "Your name"
+      = field "visitor.email",  required: true,  placeholder: "Your email",  type: "email"
 
     fieldset.form-group
       legend Message
-      input.form-control    { required ng-model="message.title"   placeholder="Subject" type="text"}
-      textarea.form-control { required ng-model="message.content" placeholder="Message" rows="10"  }
+      = field "message.title",    required: true,  placeholder: "Subject"
+      textarea.form-control [ required ng-model="message.content" placeholder="Message" rows="10" ]
 
     fieldset.form-group
       button.btn.btn-success Send

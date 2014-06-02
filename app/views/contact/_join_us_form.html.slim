@@ -1,19 +1,20 @@
 .contact-form.join ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/join_request.json')"
-  form.form-horizontal#join-request-form { name="ContactForm" }
+  = render "shared/form/errors"
+  form#join-request-form { name="ContactForm" }
 
     fieldset.form-group
       legend Contact person
-      input.form-control { required ng-model="visitor.name"  placeholder="Your name"  type="text"  }
-      input.form-control { required ng-model="visitor.email" placeholder="Your email" type="email" }
+      = field "visitor.name",   required: true,  placeholder: "Your name"
+      = field "visitor.email",  required: true,  placeholder: "Your email",  type: "email"
 
     fieldset.form-group
       legend Job position
-      input.form-control { required ng-model="visitor.ocupation" placeholder="Your ocupation" type="text" }
+      = field "visitor.ocupation",  required: true,  placeholder: "Your ocupation"
 
     fieldset.form-group
       legend Request
-      input.form-control    { required ng-model="message.title"   placeholder="Subject" type="text" }
-      textarea.form-control { required ng-model="message.content" placeholder="Message" rows="10"   }
+      = field "message.title",    required: true,  placeholder: "Subject"
+      textarea.form-control [ required ng-model="message.content" placeholder="Message" rows="10" ]
 
     fieldset.form-group
       button.btn.btn-success Send

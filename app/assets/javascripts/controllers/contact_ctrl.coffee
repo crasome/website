@@ -1,15 +1,20 @@
 @app.controller "ContactCtrl", ["$scope", "$http",
   ($scope, $http) ->
-    $scope.visitor = {}
-    $scope.company = {}
-    $scope.message = {}
+    @visitor = {}
+    @company = {}
+    @message = {}
+
+    @errors = {}
 
     $scope.sendRequest = (destination) ->
-      data = {
-        visitor: $scope.visitor,
-        company: $scope.company,
-        message: $scope.message
+      contact = this
+
+      formData = {
+        visitor: @visitor,
+        company: @company,
+        message: @message
       }
 
-      $http.post(destination, data)
+      $http.post(destination, formData).error (data) ->
+        contact.errors = data
 ]

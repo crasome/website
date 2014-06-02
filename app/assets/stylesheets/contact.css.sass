@@ -2,25 +2,10 @@
 // TODO: use ems
 // TODO: use sass variables
 // TODO: create components
-html, body
-  margin: 0
-  padding: 0
-
-body
-  font-size: 18px
-  font-family: arial,helvetica,geneva,pragmatica,sans-serif,'Courier New',courier
-
-.page
-  width: 100%
-
-.company-name
-  text-align: center
-  font-size: 4em
-
 .contact-options
   margin: 0 auto
 
-  color: white
+  color: $white
   display: flex
   flex-flow: row wrap
   align-content: stretch
@@ -28,41 +13,59 @@ body
 
   .icon
     font-size: 7em
-
-  a
-    color: white
+    padding-top: 30px
 
   .option-tab
+    background-color: $white
+    border-radius: 10px
+    border: 1px solid $gray
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05)
+
     font-size: 1.0em
     display: flex
+    flex: 1 100%
     flex-direction: column
     align-items: center
-    flex: 1 100%
-    padding: 10%
+    padding: 1%
     margin: 1%
     width: 0
 
-    .description
-      flex: 1
-      margin-bottom: 10%
-
   .hire
-    background-color: darkblue
+    &:hover
+      border-color: $blue
+
+    color: $blue
+    a
+      color: $blue
+
     .btn-outline-inverse:hover
-      a
-        color: darkblue
+      background-color: $blue
+      color: $white
 
   .join
-    background-color: green
+    &:hover
+      border-color: $green
+
+    color: $green
+    a
+      color: $green
+
     .btn-outline-inverse:hover
-      a
-        color: green
+      background-color: $green
+      color: $white
+
 
   .send-message
-    background-color: #6f5499
+    &:hover
+      border-color: $pink
+
+    color: $pink
+    a
+      color: $pink
+
     .btn-outline-inverse:hover
-      a
-        color: #6f5499
+      background-color: $pink
+      color: $white
 
   .send-message-link
     font-size: 0.75em
@@ -71,22 +74,35 @@ body
 .btn-outline-inverse
   font-size: 1.0em
   background-color: transparent
-  border-color: white
+  border-color: $gray
   margin: 10px
   &:hover
     a
       text-decoration: none
     text-shadow: none
-    background-color: white
-    border-color: white
 
+// Horizontal
+@media (min-width: 370px)
+  .contact-options
+    .option-tab
+      flex-direction: row
+      justify-content: space-around
+      .icon
+        padding-left: 10px
+
+
+// Vertical 2
 @media (min-width: 500px)
   .contact-options
-    max-width: 550px
+    max-width: 500px
+    font-size: 1.2em
 
     .option-tab
       flex: 1 auto
+      flex-direction: column
       padding: 7%
+      .icon
+        padding: 0
       .description
         margin-bottom: 20%
 
@@ -95,30 +111,27 @@ body
     .send-message
       display: none
 
+// Vertical 3
 @media (min-width: 750px)
   .contact-options
     max-width: 800px
 
     .option-tab
-      padding: 5%
+      padding: 4%
 
     .send-message-link
       display: none
     .send-message
       display: flex
 
-@media (min-width: 1000px)
+// Vertical 3 big
+@media (min-width: 930px)
   .contact-options
-    max-width: 1000px
-
-  .page
-    font-size: 1.2em
+    max-width: 930px
+    font-size: 1.4em
 
   .btn-outline-inverse
     width: auto
     margin: 20px 5px 20px 0
     padding: 18px 24px
 
-.contact-form
-  max-width: 500px
-  margin: 1% auto
