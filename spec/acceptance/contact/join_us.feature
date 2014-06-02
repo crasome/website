@@ -8,11 +8,13 @@ Feature: Join us
     When I choose the join option
     Then I should see the join request form
 
+  @javascript
   Scenario: Send join request
     When I send the join request
     Then email with my request should be sent
      And I should see a notification that my message sent
 
+  @javascript
   Scenario: Error in request
     When I send the invalid join request
     Then I should see errors in my join request

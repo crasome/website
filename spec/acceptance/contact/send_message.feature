@@ -9,6 +9,7 @@ Feature: Send message
     When I choose the send message option
     Then I should see the send message form
 
+  @javascript
   Scenario: Send message
     When I send message
     Then email with my message should be sent

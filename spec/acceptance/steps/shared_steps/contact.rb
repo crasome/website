@@ -19,7 +19,7 @@ module SharedSteps::Contact
   end
 
   step "I should see errors in my :contact" do |contact|
-    expect(page).to have_content "validation failed"
+    expect(page).to have_content "There are some issues"
   end
 
   private

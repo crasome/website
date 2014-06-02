@@ -7,7 +7,7 @@ module UiInteractions
       super(
         context,
         link:         "hire_request",
-        form_name:    "#hire_request_form",
+        form_name:    "#hire-request-form",
         form_submit:  "Send"
       )
     end
@@ -21,16 +21,17 @@ module UiInteractions
 
     def fill_and_submit_form(message:, visitor:, company:)
       within form_name do
-        fill_in "visitor_name",   with: visitor.name
-        fill_in "visitor_email",  with: visitor.email
+        fill_in "visitor.name",   with: visitor.name
+        fill_in "visitor.email",  with: visitor.email
 
-        fill_in "company_name",   with: company.name
-        fill_in "company_email",  with: company.email
+        fill_in "company.name",   with: company.name
+        fill_in "company.email",  with: company.email
 
-        fill_in "message_title",    with: message.title
-        fill_in "message_content",  with: message.content
+        fill_in "message.title",    with: message.title
+        fill_in "message.content",  with: message.content
 
         click_button form_submit
+        sleep 1.0/12.0
       end
     end
   end

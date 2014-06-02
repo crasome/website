@@ -7,7 +7,7 @@ module UiInteractions
       super(
         context,
         link:         "join_request",
-        form_name:    "#join_request_form",
+        form_name:    "#join-request-form",
         form_submit:  "Send"
       )
     end
@@ -21,14 +21,15 @@ module UiInteractions
 
     def fill_and_submit_form(message:, visitor:)
       within form_name do
-        fill_in "visitor_name", with: visitor.name
-        fill_in "visitor_email", with: visitor.email
-        fill_in "visitor_occupation", with: visitor.occupation
+        fill_in "visitor.name", with: visitor.name
+        fill_in "visitor.email", with: visitor.email
+        fill_in "visitor.position", with: visitor.position
 
-        fill_in "message_title", with: message.title
-        fill_in "message_content", with: message.content
+        fill_in "message.title", with: message.title
+        fill_in "message.content", with: message.content
 
         click_button form_submit
+        sleep 1.0/12.0
       end
     end
   end

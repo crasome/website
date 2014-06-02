@@ -66,6 +66,10 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    capybara-angular (0.0.4)
+      capybara
+    childprocess (0.5.3)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.1.0)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -92,6 +96,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    ffi (1.9.3)
     gherkin (2.12.2)
       multi_json (~> 1.3)
     hike (1.2.3)
@@ -162,6 +167,7 @@ GEM
       rspec-mocks (= 3.0.0.rc1)
       rspec-support (= 3.0.0.rc1)
     rspec-support (3.0.0.rc1)
+    rubyzip (1.1.4)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -169,6 +175,11 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    selenium-webdriver (2.42.0)
+      childprocess (>= 0.5.0)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0.4)
     slim (2.0.2)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
@@ -210,6 +221,7 @@ GEM
     webmock (1.18.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
+    websocket (1.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -219,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.1.1)
   capybara!
+  capybara-angular
   coffee-rails
   concord
   email_spec!
@@ -234,6 +247,7 @@ DEPENDENCIES
   rspec-rails (>= 3.0.0.rc1)
   rspec-support (>= 3.0.0.rc1)
   sass-rails
+  selenium-webdriver
   slim-rails
   therubyracer
   turnip!

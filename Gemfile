@@ -39,4 +39,6 @@ group :test do
   gem 'webmock'
   gem 'launchy'
   gem 'email_spec', github: "bmabey/email-spec"
+  gem 'selenium-webdriver'
+  gem 'capybara-angular'
 end
