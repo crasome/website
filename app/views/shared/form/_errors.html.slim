@@ -1,2 +1,3 @@
-.errors ng-show="errors"
+.alert.alert-danger ng-show="errors"
   .error There are some issues with your message, please check the form
+  .error ng-show="errors['contacts']" and {{ errors['contacts'].join(", ") }}

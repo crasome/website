@@ -30,4 +30,9 @@
         url: "/send_message",
         templateUrl: 'contact_forms/send_message.html'
       }
+
+      .state "contact_forms.message_sent", {
+        url: "",
+        templateUrl: 'contact_forms/message_sent.html'
+      }
   ])

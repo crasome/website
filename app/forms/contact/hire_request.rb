@@ -15,7 +15,7 @@ module Contact
     validates "visitor.email", email: true, allow_blank: true
 
     validate do |form|
-      form.errors.add("contacts", 'please provide contact email') if contacts.empty?
+      form.errors.add("contacts", 'provide contact email') if contacts.empty?
     end
 
     def contacts
