@@ -1,1 +1,3 @@
-@app = angular.module 'contacts', ['ui.bootstrap']
+@app = angular.module 'contacts', [
+  'ui.router'
+]

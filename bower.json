@@ -1,7 +1,9 @@
 {
   "name": "crasome-website",
   "dependencies": {
-    "angular": "~1.2.16",
-    "angular-bootstrap": "~0.11.0"
+    "angular-ui-router": "~0.2",
+  },
+  "resolutions": {
+    "angular": "~1.2.16"
   }
 }

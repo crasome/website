@@ -12,6 +12,7 @@
 //
 //= require use_strict
 //= require angular
-//= require angular-bootstrap
+//= require angular-ui-router
 //= require contacts
+//= require states
 //= require_tree ./controllers

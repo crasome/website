@@ -5,10 +5,11 @@ Rails.application.routes.draw do
     post :hire_request
     post :join_request
     post :send_message
+  end
 
-    get :send_message,  action: :new,  as: :new_message
-    get :join_us,       action: :new,  as: :new_join_request
-    get :hire_us,       action: :new,  as: :new_hire_request
+  # Catch-all route for HTML requests: renders the AngularJS application.
+  scope constraints: { format: /html/ } do
+    get '(*any)', to: 'pages#welcome'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
