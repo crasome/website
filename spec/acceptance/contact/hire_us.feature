@@ -1,4 +1,4 @@
-@hire_us
+@hire_us @javascript
 Feature: Hire us
   As a company or individual
   I want to hire the company
@@ -9,7 +9,6 @@ Feature: Hire us
     When I choose the hire option
     Then I should see the hire request form
 
-  @javascript
   Scenario: Send hire request
     When I send the hire request
     Then email with my request should be sent

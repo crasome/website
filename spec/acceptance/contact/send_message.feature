@@ -1,4 +1,4 @@
-@send_message
+@send_message @javascript
 Feature: Send message
   As a visitor
   I want to send message to the company
@@ -9,7 +9,6 @@ Feature: Send message
     When I choose the send message option
     Then I should see the send message form
 
-  @javascript
   Scenario: Send message
     When I send message
     Then email with my message should be sent

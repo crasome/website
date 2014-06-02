@@ -10,7 +10,7 @@ FactoryGirl.define do
     end
 
     trait :invalid do
-      email "@invalid_email@"
+      email "invalid@email"
     end
   end
 
