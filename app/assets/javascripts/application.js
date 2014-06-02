@@ -14,5 +14,6 @@
 //= require angular
 //= require angular-ui-router
 //= require contacts
+//= require settings
 //= require states
 //= require_tree ./controllers
