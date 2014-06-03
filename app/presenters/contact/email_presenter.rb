@@ -38,7 +38,7 @@ module Contact
     end
 
     def subject
-      "#{context.action_name.humanize} from #{context.domain}: #{form.message.title}"
+      "#{context.action_name.humanize} from #{context.domain}. #{form.message.title}"
     end
 
     def contacts

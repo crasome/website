@@ -1,23 +1,24 @@
 class ContactMailer < ActionMailer::Base
-  DOMAIN = "crasome.com"
-
-  def join_request(form)
-    send_message(form)
+  def join_request(form, group = nil)
+    group = ENV['EMAIL_GROUP_TO_JOIN']
+    send_message form, group
   end
 
-  def hire_request(form)
-    send_message(form)
+  def hire_request(form, group = nil)
+    group ||= ENV['EMAIL_GROUP_TO_HIRE']
+    send_message form, group
   end
 
-  def send_message(form)
+  def send_message(form, group = nil)
+    group ||= ENV['EMAIL_GROUP_TO_MESSAGE']
     @contact = contact form
 
-    mail to: format_destination("hello"),
+    mail to: format_destination(group),
          **@contact.email_fields
   end
 
   def domain
-    DOMAIN
+    ENV['COMPANY_DOMAIN']
   end
 
   private

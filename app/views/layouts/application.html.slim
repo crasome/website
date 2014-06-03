@@ -3,7 +3,7 @@ html { ng-app="contacts" }
   head
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title= content_for?(:title) ? yield(:title) : "Crasome"
+    title= content_for?(:title) ? yield(:title) : company.name
     base href="/"
 
     = stylesheet_link_tag "application", media: "all"
@@ -15,10 +15,12 @@ html { ng-app="contacts" }
       .logo
         .company-prefix ~$
         .company-logo
-          .company-name = link_to "Crasome", root_url
+          .company-name = link_to company.name, root_url
           .company-slogan
-            span.company-slogan-main @craft
-            span.company-slogan-secondary {}[:software]
+            span.company-slogan-main
+              | @#{ company.slogan.first }
+            span.company-slogan-secondary
+              | [:#{ company.slogan.last }]
     .page
       = yield
     footer.footer
