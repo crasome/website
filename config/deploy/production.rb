@@ -12,7 +12,7 @@ set :repo_url,  ENV['DEPLOY_REPO']
 set :branch,    ENV["REVISION"] || ENV["BRANCH_NAME"] || "master"
 
 set :deploy_to,     "/home/#{fetch :user}/projects/#{fetch :application}"
-set :unicorn_conf,  "/etc/unicorn/#{fetch :application}.#{fetch :login}.rb"
+set :unicorn_conf,  "config/unicorn.rb"
 set :unicorn_pid,   "/var/run/unicorn/#{fetch :application}.#{fetch :login}.pid"
 
 set :ssh_options, {
@@ -27,10 +27,11 @@ server fetch(:deploy_server),
   password: fetch(:password),
   roles: %w{web app db}
 
-set :linked_files, %w{config/environments/.production.env}
+set :linked_files, %w{config/environments/.production.env config/unicorn.rb}
 
 # - for unicorn - #
 set :unicorn_start_cmd, "(cd #{fetch(:deploy_to)}/current; rvm use #{fetch(:rvm_ruby_version)} do bundle exec unicorn_rails -Dc #{fetch(:unicorn_conf)})"
+after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   desc "Start application"
   task :start do
