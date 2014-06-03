@@ -16,6 +16,3 @@
 /tmp
 
 /tags
-
-# Ignore vendored assets managed by bower
-/vendor/assets/components
