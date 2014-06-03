@@ -75,8 +75,8 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.action_mailer.default_url_options = { :host => ENV['COMPANY_DOMAIN'] }
-
-  ActionMailer::Base.delivery_method = :sendmail
-  ActionMailer::Base.perform_deliveries = true
-  ActionMailer::Base.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :sendmail
+  config.action_mailer.sendmail_settings = { :arguments => "-i" }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 end
