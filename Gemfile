@@ -20,6 +20,17 @@ gem "virtus", "~> 1.0"
 gem "concord"
 gem 'dotenv'
 
+group :production do
+  gem 'unicorn'
+end
+
+group :development do
+  gem 'capistrano', '~> 3.2.0'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler', '~> 1.1'
+  gem 'capistrano-rails', '~> 1.1'
+end
+
 group :development, :test do
   gem 'rspec-rails',         '>= 3.0.0.rc1'
   gem 'rspec',               '>= 3.0.0.rc1'
