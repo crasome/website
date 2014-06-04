@@ -1,12 +1,18 @@
-$green: #95c93d
-$blue: #3399cc
-$pink: #12b1d9
-$gray: #dfdfdf
+$main: #3399cc
+$secondary: #95c93d
+$accent: #9b78d1
+$background: #dfdfdf
+
+$main-dark:       adjust-color($main,       $lightness: -7)
+$secondary-dark:  adjust-color($secondary,  $lightness: -7)
+$accent-dark:     adjust-color($accent,     $lightness: -7)
+
+$main-light:       adjust-color($main,       $lightness: +2)
+$secondary-light:  adjust-color($secondary,  $lightness: +2)
+$accent-light:     adjust-color($accent,     $lightness: +2)
+
 $white: white
-$text: black
+$text: #595959
 
 $error: #ec6730
 $success: #95c93d
-
-
-$light-blue: adjust-color($blue, $saturation: +6, $lightness: +20 )

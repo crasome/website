@@ -1,137 +1,86 @@
 // TODO: clean all this mess.
-// TODO: use ems
-// TODO: use sass variables
 // TODO: create components
-.contact-options
-  margin: 0 auto
 
-  color: $white
+.contact-options
   display: flex
   flex-flow: row wrap
   align-content: stretch
   text-align: center
+  margin: 0 auto
 
   .icon
     font-size: 7em
     padding-top: 30px
 
   .option-tab
-    background-color: $white
-    border-radius: 10px
-    border: 1px solid $gray
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05)
-
-    font-size: 1.0em
     display: flex
     flex: 1 100%
-    flex-direction: column
     align-items: center
-    padding: 1%
+    justify-content: space-around
+
+    border-radius: 10px
+    border: 1px solid $background
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05)
+
+    padding: 0 2%
     margin: 1%
     width: 0
 
-  .hire
-    &:hover
-      border-color: $blue
+    color: $white
 
-    color: $blue
-    a
-      color: $blue
+    .description
+      display: none
 
-    .btn-outline-inverse:hover
-      background-color: $blue
+    .btn
+      @extend .btn-lg
       color: $white
+      border-color: $background
+      font-size: 1.0em
+      text-shadow: none
+
+  =option-tab($main, $dark, $light)
+    background-color: $main
+    &:hover
+      background-color: $light
+      .btn
+        background-color: $light
+        &:hover
+          background-color: $main
+    .icon
+      a
+        color: $white
+
+  .hire
+    +option-tab($main, $main-dark, $main-light)
 
   .join
-    &:hover
-      border-color: $green
-
-    color: $green
-    a
-      color: $green
-
-    .btn-outline-inverse:hover
-      background-color: $green
-      color: $white
-
+    +option-tab($secondary, $secondary-dark, $secondary-light)
 
   .send-message
-    &:hover
-      border-color: $pink
+    +option-tab($accent, $accent-dark, $accent-light)
 
-    color: $pink
-    a
-      color: $pink
-
-    .btn-outline-inverse:hover
-      background-color: $pink
-      color: $white
-
-  .send-message-link
-    font-size: 0.75em
-    display: none
-
-.btn-outline-inverse
-  font-size: 1.0em
-  background-color: transparent
-  border-color: $gray
-  margin: 10px
-  &:hover
-    a
-      text-decoration: none
-    text-shadow: none
-
-// Horizontal
-@media (min-width: 370px)
-  .contact-options
-    .option-tab
-      flex-direction: row
-      justify-content: space-around
-      .icon
-        padding-left: 10px
-
-
-// Vertical 2
-@media (min-width: 500px)
+@media (min-width: 390px)
   .contact-options
     max-width: 500px
+    .option-tab
+      .description
+        display: block
+
+// Vertical
+@media (min-width: 700px)
+  .contact-options
+    max-width: 700px
     font-size: 1.2em
 
     .option-tab
       flex: 1 auto
       flex-direction: column
-      padding: 7%
-      .icon
-        padding: 0
+      padding: 5%
       .description
         margin-bottom: 20%
-
-    .send-message-link
-      display: block
-    .send-message
-      display: none
-
-// Vertical 3
-@media (min-width: 750px)
-  .contact-options
-    max-width: 800px
-
-    .option-tab
-      padding: 4%
-
-    .send-message-link
-      display: none
-    .send-message
-      display: flex
-
-// Vertical 3 big
-@media (min-width: 930px)
-  .contact-options
-    max-width: 930px
-    font-size: 1.4em
-
-  .btn-outline-inverse
-    width: auto
-    margin: 20px 5px 20px 0
-    padding: 18px 24px
-
+        order: 1
+      .icon
+        order: 2
+        padding: 0
+      .actions
+        order: 3
