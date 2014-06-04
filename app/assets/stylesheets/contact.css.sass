@@ -7,6 +7,7 @@
   align-content: stretch
   text-align: center
   margin: 0 auto
+  justify-content: center
 
   .icon
     font-size: 7em
@@ -67,14 +68,15 @@
         display: block
 
 // Vertical
-@media (min-width: 700px)
+@media (min-width: 750px)
   .contact-options
-    max-width: 700px
+    max-width: 750px
     font-size: 1.2em
 
     .option-tab
       flex: 1 auto
       flex-direction: column
+      justify-content: space-between
       max-width: 220px
       padding: 5%
       .description
