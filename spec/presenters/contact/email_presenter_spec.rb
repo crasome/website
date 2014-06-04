@@ -19,4 +19,20 @@ describe Contact::EmailPresenter do
       expect(details).to include company.email
     end
   end
+
+  describe "visitor_contact" do
+    it "retuns the name and email" do
+      email_contact = presenter.visitor_contact
+
+      expect(email_contact).to include "<#{visitor.email}>"
+      expect(email_contact).to include visitor.name
+    end
+
+    it "retuns the email when no name defined" do
+      visitor.name = ""
+      email_contact = presenter.visitor_contact
+
+      expect(email_contact).to eq visitor.email
+    end
+  end
 end

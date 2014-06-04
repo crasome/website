@@ -33,7 +33,7 @@ module Contact
 
     private
     def format_contact(contact)
-      return contact.email unless contact.name.present?
+      return contact.email if contact.name.blank?
       "\"#{contact.name}\" <#{contact.email}>"
     end
 
