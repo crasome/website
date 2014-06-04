@@ -34,5 +34,12 @@ describe Contact::EmailPresenter do
 
       expect(email_contact).to eq visitor.email
     end
+
+    it "retuns the name when no email defined" do
+      visitor.email = ""
+      email_contact = presenter.visitor_contact
+
+      expect(email_contact).to eq visitor.name
+    end
   end
 end
