@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require use_strict
+//= require ua_tracker
 //= require angular
 //= require angular-ui-router
 //= require contacts
