@@ -16,10 +16,9 @@ html { ng-app="contacts" }
         .company-logo
           .company-name = link_to company.name, root_url
           .company-slogan
-            span.company-slogan-main
-              | @#{ company.slogan.first }
+            span.company-slogan-main = company.slogan.first
             span.company-slogan-secondary
-              | [:#{ company.slogan.last }]
+              |  #{ company.slogan.last }
     .page
       = yield
     footer.footer
