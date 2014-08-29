@@ -1,0 +1,27 @@
+.join
+  .info
+    .icon.glyphicon.glyphicon-cog
+    .description
+      | We are openminded and supportive team.<br/>
+      | Craft, experiment and explore together with us!
+
+  .contact-form ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/join_request.json')"
+    = render "shared/form/errors"
+    form#join-request-form { name="ContactForm" }
+
+      fieldset.form-group
+        legend Contact person
+        = field "visitor.name",   required: true,  placeholder: "Your name"
+        = field "visitor.email",  required: true,  placeholder: "Your email",  type: "email"
+
+      fieldset.form-group
+        legend Job position
+        = field "visitor.position",  required: true,  placeholder: "Your position"
+
+      fieldset.form-group
+        legend Request
+        = field "message.title", placeholder: "Subject (optional)"
+        textarea.form-control [ required ng-model="message.content" name="message.content" placeholder="Message" rows="10" ]
+
+      fieldset.form-group
+        button.btn.btn-success Send

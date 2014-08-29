@@ -32,7 +32,7 @@
       font-size: 1.0em
       text-shadow: none
 
-  =option-tab($main, $dark, $light)
+  =option-tab($main)
     border: 1px solid $main
     color: $main
     background-color: $white
@@ -49,13 +49,13 @@
         background-color: $main
 
   .hire
-    +option-tab($main, $main-dark, $main-light)
+    +option-tab($main)
 
   .join
-    +option-tab($secondary, $secondary-dark, $secondary-light)
+    +option-tab($secondary)
 
   .send-message
-    +option-tab($main, $main-dark, $main-light)
+    +option-tab($main)
 
 @media (min-width: 390px)
   .contact-options

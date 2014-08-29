@@ -1,0 +1,16 @@
+.send-message
+  .contact-form ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/send_message.json')"
+    form#send-message-form { name="ContactForm" }
+
+      fieldset.form-group
+        legend Contact person
+        = field "visitor.name",   required: true,  placeholder: "Your name"
+        = field "visitor.email",  required: true,  placeholder: "Your email",  type: "email"
+
+      fieldset.form-group
+        legend Message
+        = field "message.title",    required: true,  placeholder: "Subject"
+        textarea.form-control [ required ng-model="message.content" name="message.content" placeholder="Message" rows="10" ]
+
+      fieldset.form-group
+        button.btn.btn-success Send

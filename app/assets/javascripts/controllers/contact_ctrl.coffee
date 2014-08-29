@@ -19,5 +19,5 @@
         .error (data) ->
           contact.errors = data
         .success (data) ->
-          $state.go('contact_forms.message_sent');
+          $state.go('contact.message_sent');
 ]

@@ -1,14 +1,42 @@
-.contact-forms
-  max-width: 600px
+.contact
   margin: 1% auto
+  max-width: 600px
+
   .panel
     border: 1px solid $background-dark
 
-.contact-form
-  margin: 10%
-  .form-control
-    color: $text
-    margin-bottom: 10px
+  .contact-form
+    @extend .panel
+    padding: 10%
+    .form-control
+      color: $text
+      margin-bottom: 10px
 
-.ng-invalid.ng-dirty
-  border-color: red
+  .info
+    @extend .panel
+    padding: 5%
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    align-items: center
+
+    .icon
+      font-size: 5em
+    .description
+      margin: 5%
+
+  =contact-form-brand($color)
+    .icon
+      color: $color
+    .btn-success
+      background: $color
+
+  .hire
+    +contact-form-brand($main)
+  .join
+    +contact-form-brand($secondary)
+  .send-message
+    +contact-form-brand($main)
+
+  .ng-invalid.ng-dirty
+    border-color: red

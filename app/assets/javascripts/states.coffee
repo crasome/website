@@ -10,29 +10,29 @@
         templateUrl: 'contact_options.html'
       }
 
-      .state "contact_forms", {
+      .state "contact", {
         abstract: true,
         url: "/contact",
-        templateUrl: 'contact_forms.html'
+        templateUrl: 'contact.html'
       }
 
-      .state "contact_forms.hire_us", {
+      .state "contact.hire_us", {
         url: "/hire_us",
-        templateUrl: 'contact_forms/hire_us.html'
+        templateUrl: 'contact/hire_us.html'
       }
 
-      .state "contact_forms.join_us", {
+      .state "contact.join_us", {
         url: "/join_us",
-        templateUrl: 'contact_forms/join_us.html'
+        templateUrl: 'contact/join_us.html'
       }
 
-      .state "contact_forms.send_message", {
+      .state "contact.send_message", {
         url: "/send_message",
-        templateUrl: 'contact_forms/send_message.html'
+        templateUrl: 'contact/send_message.html'
       }
 
-      .state "contact_forms.message_sent", {
+      .state "contact.message_sent", {
         url: "",
-        templateUrl: 'contact_forms/message_sent.html'
+        templateUrl: 'contact/message_sent.html'
       }
   ])
