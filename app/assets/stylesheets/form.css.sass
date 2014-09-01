@@ -22,18 +22,21 @@
     .description
       margin: 5%
 
-  =contact-form-brand($color)
+  =contact-form-brand($color, $variation)
     .icon
       color: $color
     .btn-success
-      background: $color
+      background-color: $color
+      border-color: $color
+      &:hover
+        background-color: $variation
 
   .hire
-    +contact-form-brand($main)
+    +contact-form-brand($main, $main-dark)
   .join
-    +contact-form-brand($secondary)
+    +contact-form-brand($secondary, $secondary-dark)
   .send-message
-    +contact-form-brand($main)
+    +contact-form-brand($main, $main-dark)
 
   .ng-invalid.ng-dirty
     border-color: red
