@@ -14,6 +14,7 @@ set :branch,    ENV["REVISION"] || ENV["BRANCH_NAME"] || "master"
 set :deploy_to,     "/home/#{fetch :user}/projects/#{fetch :application}"
 set :unicorn_conf,  "config/unicorn.rb"
 set :unicorn_pid,   "/var/run/unicorn/#{fetch :application}.#{fetch :login}.pid"
+set :bundle_flags, '--deployment'
 
 set :ssh_options, {
   forward_agent: true,
