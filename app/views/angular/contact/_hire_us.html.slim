@@ -3,8 +3,7 @@
     .icon.glyphicon.glyphicon-ok
     .description
       | Only the best software craftsmen join the company.<br/>
-      | We deliver clean and reliable software.<br/>
-      | Make things happen together with us!
+      | We deliver clean and reliable software.
 
   .contact-form ng-controller="ContactCtrl" ng-submit="ContactForm.$valid && sendRequest('/contact/hire_request.json')"
     = render "shared/form/errors"
