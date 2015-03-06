@@ -21,7 +21,7 @@ set :ssh_options, {
 }
 set :log_level, :info
 set :keep_releases, 3
-set :rvm_ruby_version, "2.1.2"
+set :rvm_ruby_version, "2.2.0"
 
 server fetch(:deploy_server),
   user: fetch(:user),
